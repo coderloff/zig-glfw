@@ -1,8 +1,30 @@
 # Zig-GLFW - A GLFW library packaged for the Zig build system
 
-This is a fork of [glfw](https://github.com/glfw/glfw), packaged for Zig. Unnecessary files have been deleted, and the build system has been replaced with build.zig.
+This is a fork of [glfw](https://github.com/glfw/glfw) and unmaintained GLFW repository from [Hexops](https://github.com/hexops), packaged for Zig. Unnecessary files have been deleted, and the build system has been replaced with build.zig.
 
 For the Ziggified GLFW binding, see: [coderloff/glfw](https://github.com/coderloff/zglfw).
+
+## Adding to your project
+
+To add this library to your Zig project, first fetch the repository to add the dependency to `build.zig.zon`:
+```bash
+zig fetch --save https://github.com/coderloff/zig-glfw/archive/[latest-commit-hash].zip
+```
+
+Latest commit hash can be acquired by entering `Commits` tab on the repository and pressing the `Copy full SHA` button next to the latest commit.
+
+Then, add the dependency to your `build.zig` file:
+```zig
+...
+
+const glfw_dep = b.dependency("zig_glfw", .{
+    .target = target,
+    .optimize = optimize,
+});
+your_module.linkLibrary(glfw_dep.artifact("zig-glfw"));
+
+...
+```
 
 ## Updating
 
