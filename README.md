@@ -2,6 +2,8 @@
 
 This is a fork of [glfw](https://github.com/glfw/glfw) and unmaintained GLFW repository from [Hexops](https://github.com/hexops), packaged for Zig. Unnecessary files have been deleted, and the build system has been replaced with build.zig.
 
+For an example of how to use this library, check out the [coderloff/zig-glfw-example](https://github.com/coderloff/zig-glfw-example).
+
 For the Ziggified GLFW binding, see: [coderloff/zglfw](https://github.com/coderloff/zglfw).
 
 ## Adding to your project
